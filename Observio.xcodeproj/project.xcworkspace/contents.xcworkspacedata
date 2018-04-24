@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:prd.xcodeproj">
+      location = "self:/Users/janis/Documents/SWIFT/SAVE/asd/prd/Observio.xcodeproj">
    </FileRef>
 </Workspace>

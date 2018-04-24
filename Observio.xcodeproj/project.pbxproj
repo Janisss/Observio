@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1857A146201B401D009787BD /* BreakShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1857A145201B401D009787BD /* BreakShow.xib */; };
 		188AEC5720170F0D0088DB2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC5620170F0D0088DB2B /* AppDelegate.swift */; };
 		188AEC5920170F0D0088DB2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC5820170F0D0088DB2B /* ViewController.swift */; };
 		188AEC5B20170F0D0088DB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188AEC5A20170F0D0088DB2B /* Assets.xcassets */; };
 		188AEC5E20170F0D0088DB2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188AEC5C20170F0D0088DB2B /* Main.storyboard */; };
 		188AEC6A20170F0D0088DB2B /* prdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC6920170F0D0088DB2B /* prdTests.swift */; };
 		188AEC7520170F0D0088DB2B /* prdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC7420170F0D0088DB2B /* prdUITests.swift */; };
+		188AEC85201717890088DB2B /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC84201717890088DB2B /* QuotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1857A145201B401D009787BD /* BreakShow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakShow.xib; sourceTree = "<group>"; };
 		188AEC5320170F0D0088DB2B /* prd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AEC5620170F0D0088DB2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188AEC5820170F0D0088DB2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		188AEC7020170F0D0088DB2B /* prdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AEC7420170F0D0088DB2B /* prdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prdUITests.swift; sourceTree = "<group>"; };
 		188AEC7620170F0D0088DB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188AEC84201717890088DB2B /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,13 @@
 			isa = PBXGroup;
 			children = (
 				188AEC5620170F0D0088DB2B /* AppDelegate.swift */,
+				188AEC84201717890088DB2B /* QuotesViewController.swift */,
 				188AEC5820170F0D0088DB2B /* ViewController.swift */,
 				188AEC5A20170F0D0088DB2B /* Assets.xcassets */,
 				188AEC5C20170F0D0088DB2B /* Main.storyboard */,
 				188AEC5F20170F0D0088DB2B /* Info.plist */,
 				188AEC6020170F0D0088DB2B /* prd.entitlements */,
+				1857A145201B401D009787BD /* BreakShow.xib */,
 			);
 			path = prd;
 			sourceTree = "<group>";
@@ -192,7 +198,16 @@
 				TargetAttributes = {
 					188AEC5220170F0D0088DB2B = {
 						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = DBY7KC929C;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					188AEC6420170F0D0088DB2B = {
 						CreatedOnToolsVersion = 9.2;
@@ -206,8 +221,8 @@
 					};
 				};
 			};
-			buildConfigurationList = 188AEC4E20170F0D0088DB2B /* Build configuration list for PBXProject "prd" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = 188AEC4E20170F0D0088DB2B /* Build configuration list for PBXProject "Observio" */;
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -232,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188AEC5B20170F0D0088DB2B /* Assets.xcassets in Resources */,
+				1857A146201B401D009787BD /* BreakShow.xib in Resources */,
 				188AEC5E20170F0D0088DB2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188AEC5920170F0D0088DB2B /* ViewController.swift in Sources */,
+				188AEC85201717890088DB2B /* QuotesViewController.swift in Sources */,
 				188AEC5720170F0D0088DB2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,11 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = prd/prd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DBY7KC929C;
 				INFOPLIST_FILE = prd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = brickstone.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -430,11 +448,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = prd/prd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DBY7KC929C;
 				INFOPLIST_FILE = prd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = brickstone.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -506,7 +525,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		188AEC4E20170F0D0088DB2B /* Build configuration list for PBXProject "prd" */ = {
+		188AEC4E20170F0D0088DB2B /* Build configuration list for PBXProject "Observio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188AEC7720170F0D0088DB2B /* Debug */,
