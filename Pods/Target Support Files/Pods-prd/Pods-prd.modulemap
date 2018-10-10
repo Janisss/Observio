@@ -1,0 +1,6 @@
+module Pods_prd [system] {
+  umbrella header "Pods-prd-umbrella.h"
+
+  export *
+  module * { export * }
+}

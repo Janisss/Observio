@@ -1,0 +1,6 @@
+module SwiftyTimer [system] {
+  umbrella header "SwiftyTimer-umbrella.h"
+
+  export *
+  module * { export * }
+}

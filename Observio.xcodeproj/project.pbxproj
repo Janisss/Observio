@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1857A146201B401D009787BD /* BreakShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1857A145201B401D009787BD /* BreakShow.xib */; };
+		181EF0FC20A03FFD009C05F7 /* alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EF0FB20A03FFD009C05F7 /* alerts.swift */; };
 		188AEC5720170F0D0088DB2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC5620170F0D0088DB2B /* AppDelegate.swift */; };
 		188AEC5920170F0D0088DB2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC5820170F0D0088DB2B /* ViewController.swift */; };
 		188AEC5B20170F0D0088DB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188AEC5A20170F0D0088DB2B /* Assets.xcassets */; };
@@ -15,6 +15,11 @@
 		188AEC6A20170F0D0088DB2B /* prdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC6920170F0D0088DB2B /* prdTests.swift */; };
 		188AEC7520170F0D0088DB2B /* prdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC7420170F0D0088DB2B /* prdUITests.swift */; };
 		188AEC85201717890088DB2B /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188AEC84201717890088DB2B /* QuotesViewController.swift */; };
+		18D94DF6209B05DA00BF5B67 /* activity_chceck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D94DF5209B05DA00BF5B67 /* activity_chceck.swift */; };
+		18F93863209B375500D1D475 /* libSwiftyJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F93862209B375500D1D475 /* libSwiftyJSON.a */; };
+		18F93865209B375C00D1D475 /* libSwiftyTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F93864209B375C00D1D475 /* libSwiftyTimer.a */; };
+		18FBE33B209B380E00FF9A3B /* libAlamofire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FBE33A209B380E00FF9A3B /* libAlamofire.a */; };
+		E0A92275D9FC29AFF516B3E5 /* libPods-prd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0C9941CBB7264E77289F1 /* libPods-prd.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1857A145201B401D009787BD /* BreakShow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakShow.xib; sourceTree = "<group>"; };
-		188AEC5320170F0D0088DB2B /* prd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		181EF0FB20A03FFD009C05F7 /* alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alerts.swift; sourceTree = "<group>"; };
+		1874770D3ADD6A071D70BC27 /* Pods-prd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prd.release.xcconfig"; path = "Pods/Target Support Files/Pods-prd/Pods-prd.release.xcconfig"; sourceTree = "<group>"; };
+		188AEC5320170F0D0088DB2B /* Observio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Observio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188AEC5620170F0D0088DB2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188AEC5820170F0D0088DB2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		188AEC5A20170F0D0088DB2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +56,12 @@
 		188AEC7420170F0D0088DB2B /* prdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prdUITests.swift; sourceTree = "<group>"; };
 		188AEC7620170F0D0088DB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188AEC84201717890088DB2B /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		18D94DF5209B05DA00BF5B67 /* activity_chceck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activity_chceck.swift; sourceTree = "<group>"; };
+		18F93862209B375500D1D475 /* libSwiftyJSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSwiftyJSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F93864209B375C00D1D475 /* libSwiftyTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSwiftyTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		18FBE33A209B380E00FF9A3B /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0E49671A1F627466B7FB5A /* Pods-prd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prd/Pods-prd.debug.xcconfig"; sourceTree = "<group>"; };
+		A5E0C9941CBB7264E77289F1 /* libPods-prd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FBE33B209B380E00FF9A3B /* libAlamofire.a in Frameworks */,
+				18F93865209B375C00D1D475 /* libSwiftyTimer.a in Frameworks */,
+				18F93863209B375500D1D475 /* libSwiftyJSON.a in Frameworks */,
+				E0A92275D9FC29AFF516B3E5 /* libPods-prd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,13 +100,15 @@
 				188AEC6820170F0D0088DB2B /* prdTests */,
 				188AEC7320170F0D0088DB2B /* prdUITests */,
 				188AEC5420170F0D0088DB2B /* Products */,
+				5E5FCD995DE5C53BD23738F9 /* Pods */,
+				4CCB79AAB85530DE984092EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		188AEC5420170F0D0088DB2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				188AEC5320170F0D0088DB2B /* prd.app */,
+				188AEC5320170F0D0088DB2B /* Observio.app */,
 				188AEC6520170F0D0088DB2B /* prdTests.xctest */,
 				188AEC7020170F0D0088DB2B /* prdUITests.xctest */,
 			);
@@ -102,12 +120,13 @@
 			children = (
 				188AEC5620170F0D0088DB2B /* AppDelegate.swift */,
 				188AEC84201717890088DB2B /* QuotesViewController.swift */,
+				181EF0FB20A03FFD009C05F7 /* alerts.swift */,
 				188AEC5820170F0D0088DB2B /* ViewController.swift */,
 				188AEC5A20170F0D0088DB2B /* Assets.xcassets */,
 				188AEC5C20170F0D0088DB2B /* Main.storyboard */,
+				18D94DF5209B05DA00BF5B67 /* activity_chceck.swift */,
 				188AEC5F20170F0D0088DB2B /* Info.plist */,
 				188AEC6020170F0D0088DB2B /* prd.entitlements */,
-				1857A145201B401D009787BD /* BreakShow.xib */,
 			);
 			path = prd;
 			sourceTree = "<group>";
@@ -130,13 +149,34 @@
 			path = prdUITests;
 			sourceTree = "<group>";
 		};
+		4CCB79AAB85530DE984092EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18FBE33A209B380E00FF9A3B /* libAlamofire.a */,
+				18F93864209B375C00D1D475 /* libSwiftyTimer.a */,
+				18F93862209B375500D1D475 /* libSwiftyJSON.a */,
+				A5E0C9941CBB7264E77289F1 /* libPods-prd.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E5FCD995DE5C53BD23738F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E49671A1F627466B7FB5A /* Pods-prd.debug.xcconfig */,
+				1874770D3ADD6A071D70BC27 /* Pods-prd.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		188AEC5220170F0D0088DB2B /* prd */ = {
+		188AEC5220170F0D0088DB2B /* Observio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 188AEC7920170F0D0088DB2B /* Build configuration list for PBXNativeTarget "prd" */;
+			buildConfigurationList = 188AEC7920170F0D0088DB2B /* Build configuration list for PBXNativeTarget "Observio" */;
 			buildPhases = (
+				47F90E8677057E19898B3652 /* [CP] Check Pods Manifest.lock */,
 				188AEC4F20170F0D0088DB2B /* Sources */,
 				188AEC5020170F0D0088DB2B /* Frameworks */,
 				188AEC5120170F0D0088DB2B /* Resources */,
@@ -145,9 +185,9 @@
 			);
 			dependencies = (
 			);
-			name = prd;
+			name = Observio;
 			productName = prd;
-			productReference = 188AEC5320170F0D0088DB2B /* prd.app */;
+			productReference = 188AEC5320170F0D0088DB2B /* Observio.app */;
 			productType = "com.apple.product-type.application";
 		};
 		188AEC6420170F0D0088DB2B /* prdTests */ = {
@@ -193,7 +233,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jan Catlos";
 				TargetAttributes = {
 					188AEC5220170F0D0088DB2B = {
@@ -234,7 +274,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				188AEC5220170F0D0088DB2B /* prd */,
+				188AEC5220170F0D0088DB2B /* Observio */,
 				188AEC6420170F0D0088DB2B /* prdTests */,
 				188AEC6F20170F0D0088DB2B /* prdUITests */,
 			);
@@ -247,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				188AEC5B20170F0D0088DB2B /* Assets.xcassets in Resources */,
-				1857A146201B401D009787BD /* BreakShow.xib in Resources */,
 				188AEC5E20170F0D0088DB2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,12 +307,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47F90E8677057E19898B3652 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-prd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		188AEC4F20170F0D0088DB2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				188AEC5920170F0D0088DB2B /* ViewController.swift in Sources */,
+				18D94DF6209B05DA00BF5B67 /* activity_chceck.swift in Sources */,
+				181EF0FC20A03FFD009C05F7 /* alerts.swift in Sources */,
 				188AEC85201717890088DB2B /* QuotesViewController.swift in Sources */,
 				188AEC5720170F0D0088DB2B /* AppDelegate.swift in Sources */,
 			);
@@ -300,12 +362,12 @@
 /* Begin PBXTargetDependency section */
 		188AEC6720170F0D0088DB2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 188AEC5220170F0D0088DB2B /* prd */;
+			target = 188AEC5220170F0D0088DB2B /* Observio */;
 			targetProxy = 188AEC6620170F0D0088DB2B /* PBXContainerItemProxy */;
 		};
 		188AEC7220170F0D0088DB2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 188AEC5220170F0D0088DB2B /* prd */;
+			target = 188AEC5220170F0D0088DB2B /* Observio */;
 			targetProxy = 188AEC7120170F0D0088DB2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -336,6 +398,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -343,6 +406,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -393,6 +457,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -400,6 +465,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -430,32 +496,38 @@
 		};
 		188AEC7A20170F0D0088DB2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E0E49671A1F627466B7FB5A /* Pods-prd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DBY7KC929C;
 				INFOPLIST_FILE = prd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = brickstone.prd;
+				PRODUCT_BUNDLE_IDENTIFIER = "design.brickstone.observio-mac.bs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		188AEC7B20170F0D0088DB2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1874770D3ADD6A071D70BC27 /* Pods-prd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DBY7KC929C;
 				INFOPLIST_FILE = prd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = brickstone.prd;
+				PRODUCT_BUNDLE_IDENTIFIER = "design.brickstone.observio-mac.bs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -534,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		188AEC7920170F0D0088DB2B /* Build configuration list for PBXNativeTarget "prd" */ = {
+		188AEC7920170F0D0088DB2B /* Build configuration list for PBXNativeTarget "Observio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188AEC7A20170F0D0088DB2B /* Debug */,

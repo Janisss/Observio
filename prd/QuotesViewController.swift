@@ -9,11 +9,29 @@
 import Cocoa
 import WebKit
 import AppKit
+import SwiftyJSON
+import SwiftyTimer
+import Alamofire
+import JavaScriptCore
 
 var usrToken:String = ""
 var usrId:String = ""
 var showAlert:Bool = true
 var limit:Int = 0
+var workActivity : Int = 0
+var pauseActivity : Int = 0
+var workType : Int = 0
+var pauseType : Int = 0
+var parameters : [String : Any] = [:]
+var alertObservioName : String = ""
+var alertObservioText : String = ""
+var observioAlert : Int = 0
+
+var statusCode : String? = ""
+var convertString : Int = 0
+
+
+
 
 class QuotesViewController: NSViewController {
     
@@ -28,55 +46,114 @@ class QuotesViewController: NSViewController {
         URLCache.shared.diskCapacity = 0
         URLCache.shared.memoryCapacity = 0
         webView.reload()
+        let storage = HTTPCookieStorage.shared
+        for cookie in storage.cookies! {
+            storage.deleteCookie(cookie)
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-//        URLCache.shared.removeAllCachedResponses()
-//        URLCache.shared.diskCapacity = 0
-//        URLCache.shared.memoryCapacity = 0
+
         webView.reload()
         
+        activityChceck()
+        
+        if let cookies = HTTPCookieStorage.shared.cookies {
+            for cookie in cookies {
+                if cookie.name == "userToken"{
+                    usrToken = cookie.value
+                }
+                if cookie.name == "userId"{
+                    usrId = cookie.value
+                }
+            }
+        }
+        
+        
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        parameters = [
+            "appToken" :  "4c7090241b7c7577037b2da6c07bf74bc09d2a2a",
+            "userToken" : usrToken,
+            "userId" : usrId,
+            "code" : statusCode!
+        ]
+        print("USERID:\(usrId)")
+        print("USRTOKEN:\(usrToken)")
+        
+        func controlMyStatus(){
+            Alamofire.request("https://observio.org/observio/public/api/tracking/Ping", method: .post, parameters: parameters, headers: headers).responseJSON{
+                response in
+                if response.result.isSuccess{
+                    let ourdataJSON : JSON = JSON(response.result.value!)
+                    workActivity = ourdataJSON["data"]["lastWorkTrack"]["activity"].intValue
+                    pauseActivity = ourdataJSON["data"]["lastPauseTrack"]["activity"].intValue
+                    workType = ourdataJSON["data"]["lastWorkTrack"]["work_type"].intValue
+                    
+                    
+// custom alerts
+                    observioAlert = ourdataJSON["alert"]["code"].intValue
+                    
+                    
+                    if observioAlert > 0{
+                        alertObservioName = ourdataJSON["alert"]["name"].stringValue
+                        alertObservioText = ourdataJSON["alert"]["text"].stringValue
+                        observioAlert = 0
+                        _ = cusomAlert(question: alertObservioName, text: alertObservioText, Token: usrToken, Id: usrId)
+                    }
+                    if ourdataJSON["noChanged"] != true{
+                        if workActivity == 2{
+                            statusCode = "\(workActivity)0\(pauseActivity)"
+                        }
+                        else if pauseActivity == 4{
+                            statusCode = "\(workActivity)\(workType)0\(pauseActivity)"
+                        }else
+                        {
+                            pauseType = ourdataJSON["data"]["lastPauseTrack"]["pause_type"].intValue
+                            statusCode = "\(workActivity)\(workType)0\(pauseActivity)\(pauseType)"
+                        }
+                    }
+                    
+                    if workActivity == 1{
+                        if pauseActivity == 3{
+                            if pauseType == 1{
+                                // BREAK
+                                print("<----------Break")
+                                _ = breakAlert(question: "Observio", text: "You are on a break!", Token: usrToken, Id: usrId)
+                            } else if pauseType == 2{
+                                // LUNCH
+                                print("<----------Lunch")
+                                _ = lunchAlert(question: "Observio", text: "You are on Lunch!", Token: usrToken, Id: usrId)
+                            }else if pauseType == 0{
+                                activityChceck()
+                            }
+                        }
+                    }
+                    
+                    parameters["code"] = statusCode
+                    controlMyStatus()
+                }else{
+                    print("error: \(String(describing: response.result.error)) cxxxxxddffdfvv")
+                    Timer.after(3.second) {
+                        controlMyStatus()
+                    }
+                }
+            }
+        }
+        
+        controlMyStatus()
+        
         func deleteCookie(){
-            let storage : HTTPCookieStorage = HTTPCookieStorage.shared
-            for cookie in storage.cookies  as [HTTPCookie]!{
+            let storage = HTTPCookieStorage.shared
+            for cookie in storage.cookies! {
                 storage.deleteCookie(cookie)
             }
         }
         
-        func breakAlert(question: String, text: String, Token: String, Id: String) -> Bool {
-            let alert = NSAlert()
-            alert.messageText = question
-            alert.informativeText = text
-            alert.alertStyle = .informational
-            alert.icon = NSImage!(#imageLiteral(resourceName: "smoking"))
-            alert.addButton(withTitle: "Continue Working...")
-            if alert.runModal() == .alertFirstButtonReturn{
-                if showAlert == true{
-                    readJson(adresa: "https://observio.org/observio/public/api/tracking/mac/track?userToken=\(Token)&userId=\(Id)&data[activity]=4")
-                    showAlert = false
-                    deleteCookie()
-                }
-            }
-            return true
-        }
         
-        func lunchAlert(question: String, text: String, Token: String, Id: String) -> Bool {
-            let alert = NSAlert()
-            alert.messageText = question
-            alert.informativeText = text
-            alert.alertStyle = .informational
-            alert.icon = NSImage!(#imageLiteral(resourceName: "lunch"))
-            alert.addButton(withTitle: "Continue Working...")
-                if alert.runModal() == .alertFirstButtonReturn{
-                    readJson(adresa: "https://observio.org/observio/public/api/tracking/mac/track?userToken=\(Token)&userId=\(Id)&data[activity]=4")
-                    showAlert = false
-                    deleteCookie()
-            }
-            return true
-        }
+        
         
         
         func readJson(adresa: String) {
@@ -85,58 +162,60 @@ class QuotesViewController: NSViewController {
                 if error == nil && data != nil {
                     do {
                         _ = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String:AnyObject]
-                        // Access specific key with value of type String
-                        // let str = json["sha1"] as! String
-                        // print(str)
-                        // hlavička print(response!)
+                        
                     } catch {
                     }
                 }
             }).resume()
         }
         
-        //timer
-        func twoSeconds(){
-            //disable alert repeat
-            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {
-                (_) in
-                if let cookies = HTTPCookieStorage.shared.cookies {
-                    for cookie in cookies {
-                        if cookie.name == "userToken"{
-                            usrToken = cookie.value
-                        }
-                        if cookie.name == "userId"{
-                            usrId = cookie.value
-                        }
-                    }
-                    
-                    for cookie in cookies {
-                        if cookie.name == "activity"{
-                            if cookie.value == "31" && showAlert == true{
-                                
-                                _ = breakAlert(question: "Observio", text: "You are on break!",Token: usrToken, Id: usrId)
-                            }
-                            if cookie.value == "32" && showAlert == true{
-                               
-                                _ = lunchAlert(question: "Observio", text: "You are on lunch!",Token: usrToken, Id: usrId)
-                            }
-                            else{
-                                showAlert = true
-                            }
-                        }
-                    }
-                }
-                //print(cookie.name)
-            }
-            
-        }
-        twoSeconds()
-//        let rndmNmbr = arc4random()
+        //        //timer
+        //        func twoSeconds(){
+        //            //disable alert repeat
+        //            _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {
+        //                (_) in
+        //                if let cookies = HTTPCookieStorage.shared.cookies {
+        //                    for cookie in cookies {
+        //                        if cookie.name == "userToken"{
+        //                            usrToken = cookie.value
+        //                        }
+        //                        if cookie.name == "userId"{
+        //                            usrId = cookie.value
+        //                        }
+        //                    }
+        //
+        //                    for cookie in cookies {
+        //                        if cookie.name == "activity"{
+        //                            if cookie.value == "31" && showAlert == true{
+        //
+        //                                _ = breakAlert(question: "Observio", text: "You are on break!",Token: usrToken, Id: usrId)
+        //                            }
+        //                            if cookie.value == "32" && showAlert == true{
+        //
+        //                                _ = lunchAlert(question: "Observio", text: "You are on lunch!",Token: usrToken, Id: usrId)
+        //                            }
+        //                            if cookie.value == "11"{
+        //                                activityChceck()
+        //                            }
+        //                            if cookie.value == "12"{
+        //                                activityChceck()
+        //                            }
+        //                            else{
+        //                                showAlert = true
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //
+        //        }
+        //        twoSeconds()
+        //        let rndmNmbr = arc4random()
         //web adresa fullscreen
-        let url = URL(string: "https://app.observio.org/?v=12345556666777777")
+        let url = URL(string: "https://app.observio.org/?v=1234555087677778")
         let request = URLRequest(url: url!)
         //load webu do fullscreenframu
-
+        
         webView.load(request)
         if NSAppKitVersion.current.rawValue > 1500 {
             webView.setValue(false, forKey: "drawsBackground")
